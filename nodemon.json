@@ -1,6 +1,0 @@
-{
-    "env": {
-      "passwordDB": "qwerty1234",
-      "passwordJWT": "qwertyasdfg"
-    }
-  }
