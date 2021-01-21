@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const morgan = require('morgan');
 const app = express();
 
 app.use(bodyParser.json());
@@ -9,16 +8,15 @@ app.use(bodyParser.json());
 //import routes
 const moviesRouter = require("./routes/movies");
 const usersRoutes = require("./routes/users");
-
-//logger
-app.use(morgan('combined'));
+const airingMoviesRouter = require("./routes/airingMovies");
 
 //parsing body
 app.use(bodyParser.json());
 
 //routes
 app.use('/movies', moviesRouter);
-app.use('/users',usersRoutes)
+app.use('/users',usersRoutes);
+app.use('/airingMovies', airingMoviesRouter);
 
 
 
