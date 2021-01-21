@@ -9,10 +9,10 @@ API prapared for university classes using Node.js.
 * [Authors](#authors)
 
 ## General info
-This projects allows the user to perform basic CRUD operations in a Movie Database. Additionally you are able to sign up, log in and delete the existing account. When you sign up, an email is sent to you as a confirmation.
+This projects allows the user to perform basic CRUD operations in a Movie Database. Additionally you are able to sign up, log in and delete the existing account. When you sign up, an email is sent to you as a confirmation. Moreover, you can see currently airing movies and also till when they will be aired.
 
 ## Project structure
-![](readmeImages/Structure.jpg) </br>
+![](readmeImages/UpdatedStructure.jpg) </br>
 
 ## Modules used
 * NodeJS
@@ -23,7 +23,6 @@ This projects allows the user to perform basic CRUD operations in a Movie Databa
 * JsonWebtoken
 * Bcrypt
 * Nodemailer
-* Morgan
 
 ## Endpoints
 ```js
@@ -47,7 +46,7 @@ router.post('/login', userController.user_login);
 //listing all movies
 router.get('/', movieController.movies_get_all);
 ```
-![](readmeImages/MoviesGetAll.jpg) </br>
+![](readmeImages/MoviesGetAllUpdated.jpg) </br>
 ```js
 //adding new movie
 router.post('/', authorization, movieController.movies_new);
@@ -70,6 +69,32 @@ router.patch('/:movieId', authorization, movieController.movies_change);
 router.delete('/:movieId', authorization, movieController.movies_delete);
 ```
 ![](readmeImages/MoviesDelete.jpg) </br>
+```js
+//listing all currently airing movies
+router.get('/', airingMovieController.airingMovies_get_all);
+```
+![](readmeImages/AiringMoviesGetAll.jpg) </br>
+```js
+//adding new currently airing movies
+router.post('/', authorization, airingMovieController.airingMovies_new);
+```
+![](readmeImages/AiringMoviesPost.jpg) </br>
+```js
+// details currently airing movies with id
+router.get('/:airingMovieId', airingMovieController.airingMovies_get_by_id);
+```
+![](readmeImages/AiringMoviesByID.jpg) </br>
+```js
+//changing currently airing movies with id
+router.patch('/:airingMovieId', authorization, airingMovieController.airingMovies_change);
+```
+![](readmeImages/AiringMoviesPatch.jpg) </br>
+```js
+//deleting currently airing movies with id
+router.delete('/:airingMovieId', authorization, airingMovieController.airingMovies_delete);
+```
+![](readmeImages/AiringMovieDelete.jpg) </br>
+
 
 ## Authors
 Created by [@DrelaDominika] and [@PrzemyslawStachurski] - feel free to contact us!
