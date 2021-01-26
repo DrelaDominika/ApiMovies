@@ -97,4 +97,4 @@ router.delete('/:airingMovieId', authorization, airingMovieController.airingMovi
 
 
 ## Authors
-Created by [@DrelaDominika] and [@PrzemyslawStachurski] - feel free to contact us!
+Created by [DrelaDominika](https://github.com/DrelaDominika) and [PrzemyslawStachurski](https://github.com/PrzemyslawStachurski) - feel free to contact us!
